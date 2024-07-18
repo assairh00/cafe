@@ -82,7 +82,7 @@
                     <div class="total-price">₱0</div>
                 </div>
                 <!-- BUY BUTTON -->
-                <button type="button" class="btn-buy">Checkout Now</button>
+                <button type="button" class="btn-buy" onclick="redirectToCheckout()">Checkout Now</button>
             </div>
         </header>
 
@@ -141,7 +141,7 @@
             <option value="Sugar">Sugar</option>
             <option value="Sugar Free" selected>Sugar Free</option>
         </select>
-        <a class="btn add-cart" onclick="addToCart(this)">Add to Cart</a>
+        <a class="btn add-cart" onclick="addCardClicked(this)">Add to Cart</a>
     </div>
 </div>
 <br />
@@ -699,6 +699,12 @@
                     }
                 });
             });
+
+            // JavaScript function to redirect to checkout page with product details
+function redirectToCheckout(name, price, quantity) {
+    // Redirect to checkout.php and pass parameters in the URL
+    window.location.href = 'checkout.php?name=' + encodeURIComponent(name) + '&price=' + encodeURIComponent(price) + '&quantity=' + encodeURIComponent(quantity);
+}
         </script> 
     </body>
 </html>
